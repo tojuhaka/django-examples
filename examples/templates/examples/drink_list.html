@@ -1,0 +1,12 @@
+{% extends "examples/base.html" %}
+
+
+
+{% block content %}
+
+    {{ search_form }}
+<br />
+    {% for drink in drinks %}
+        {{ drink }}
+    {% endfor %}
+{% endblock %}

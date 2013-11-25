@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}My amazing site{% endblock %}</title>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js" />
+    {% include 'autocomplete_light/static.html' %}
+</head>
+
+<body>
+    <div id="sidebar">
+        {% block sidebar %}
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div id="content">
+       {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
