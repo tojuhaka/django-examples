@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.views.generic import TemplateView, DetailView, ListView
 from django.views.generic.detail import BaseDetailView
-from examples.forms import AutocompleteForm
+from examples.forms import AutocompleteForm, DrinkCreateForm
 from examples.models import Drink
 from django.utils import simplejson as json
 from django import http
@@ -35,7 +35,7 @@ class DrinkDetailView(DetailView):
 
 class DrinkCreateView(CreateView):
     template_name = "examples/drink_create.html"
-    model = Drink
+    form_class = DrinkCreateForm
 
 
 class DrinkUpdateView(UpdateView):
@@ -51,9 +51,6 @@ class DrinksView(ListView):
         context = super(DrinksView, self).get_context_data(**kwargs)
         context['search_form'] = AutocompleteForm()
         return context
-
-
-
 
 
 class RandomDrinkJsonView(JSONResponseMixin, TemplateView):

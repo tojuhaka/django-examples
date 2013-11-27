@@ -1,2 +1,5 @@
 django-jquery==1.9.1
 django-autocomplete-light==1.4.9
+South==0.8.4
+django-extensions
+pygraphviz
